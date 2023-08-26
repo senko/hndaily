@@ -1,0 +1,20 @@
+<html>
+
+<body>
+  <h1>HackerNewsDaily</h1>
+  <p>Here are the top articles on Hacker News for {{ date }}:</p>
+  <ul>
+    {% for item in items %}
+    <li style="margin-bottom: 0.5em">
+      {{ item.title }}
+      (
+        {% if item.url %}<a href="{{ item.url }}">link</a>, {% endif %}
+        <a href="{{ item.hnlink }}">discussion</a>,
+        {{item.score}} points, {{item.comments}} comments</a>
+      )
+    </li>
+    {% endfor %}
+  </ul>
+</body>
+
+</html>
