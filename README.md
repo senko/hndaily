@@ -5,7 +5,7 @@ weekly, or at any other interval.
 
 The newsletter uses the official HN API to fetch the top stories  and
 creates an email with the stories in HTML format. The email is sent to the
-recipient address.
+recipient address using Sendgrid or Amazon SES.
 
 For each story, only the title, number of comments, number of points, and
 links to the web and HN discussion are included.
