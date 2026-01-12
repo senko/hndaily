@@ -115,10 +115,15 @@ def get_stories_for_ids(hn_ids: list[int]) -> list[dict[str, Any]]:
         if i % PROGRESS_INTERVAL == 0:
             log.info(f"Fetching article {(i + 1)}/{len(hn_ids)} ...")
 
-        response = requests.get(url)
-        if not response.ok:
-            log.warning(f"Failed to fetch article {hn_id}: {response.status_code}")
+        try:
+            response = requests.get(url)
+            if not response.ok:
+                log.warning(f"Failed to fetch article {hn_id}: {response.status_code}")
+                continue
+        except Exception as err:
+            log.warning(f"Failed to fetch article {hn_id}: {str(err)}", exc_info=True)
             continue
+
         item = response.json()
         if item.get("type") != "story":
             continue
