@@ -1,0 +1,19 @@
+[project]
+name = "hndaily"
+version = "0.1.0"
+description = "Digest newsletter for top Hacker News stories."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "boto3>=1.34.156",
+    "jinja2>=3.1.2",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "sendgrid>=6.10.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=23.7.0",
+    "ruff>=0.5.6",
+]

@@ -14,21 +14,16 @@ Hacker News Daily is **NOT** affiliated with or endorsed by HN or YC.
 
 ## Installation
 
-Hacker News Daily requires Python 3.9+.
+Hacker News Daily requires Python 3.13+ and [uv](https://docs.astral.sh/uv/) package manager.
 
 Clone the repository:
 
     git clone git@github.com:senko/hndaily.git
     cd hndaily/
 
-Set up and activate a new Python virtual environment:
+Set up the virtual environment and install dependencies:
 
-    python -m venv .venv
-    source .venv/bin/activate
-
-Install the dependencies:
-
-    pip install -r requirements.txt
+    uv sync
 
 Configure the environment variables:
 
