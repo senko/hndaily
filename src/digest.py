@@ -127,7 +127,7 @@ def get_stories_for_ids(hn_ids: list[int]) -> list[dict[str, Any]]:
         item = response.json()
         if item.get("type") != "story":
             continue
-        item["comments"] = item["descendants"]
+        item["comments"] = item.get("descendants", 0)
         item["hnlink"] = f"https://news.ycombinator.com/item?id={hn_id}"
         stories.append(item)
 
